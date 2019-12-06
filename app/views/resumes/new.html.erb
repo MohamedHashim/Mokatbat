@@ -1,0 +1,112 @@
+<h1>Resumes#new</h1>
+<p>Find me in app/views/resumes/new.html.erb</p>
+<% if !@resume.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+<% if params[:type] == 'incoming'%>
+
+   <div class = "well">
+   <%= form_for @resume, html: { multipart: true } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+
+
+      <%= f.label :رقم_مكاتبة_المركز %>
+      <%= f.text_field :رقم_مكاتبة_المركز %>
+      
+      <%= f.label :رقم_مكاتبة_الجهة_المعنية %>
+      <%= f.text_field :رقم_مكاتبة_الجهة_المعنية %>
+
+
+      <%= f.label :تاريخ_المكاتبة %>
+      <%= date_field(:resume, :تاريخ_المكاتبة) %>
+
+
+      <%= f.label :جهة_الوارد %>                    
+      <%= select(:resume, :جهة_الوارد, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %>
+
+
+      <%= f.label :طبيعة_المكاتبة %>
+      <%= select(:resume, :طبيعة_المكاتبة, [['التزام'], ['معلومية'], ['مطلوب رد']]) %>
+
+
+      <%= f.label :حالة_المكاتبة %>
+      <%= select(:resume, :حالة_المكاتبة, [['مغلقة'], ['منتهية']]) %>
+
+
+      <%= f.label :الموضوع %>
+      <%= f.text_field:الموضوع%>
+
+      <%= f.label :الظابط_المختص %>
+      <%= select(:resume, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
+
+
+      <%= f.label :الموضوع_الرئيسى %>
+      <%= f.text_field:الموضوع_الرئيسى %>
+
+
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+
+
+<% else %>
+<div class = "well">
+   <%= form_for @resume, html: { multipart: true } do |f| %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+
+
+      <%= f.label :رقم_مكاتبة %>
+      <%= f.text_field :رقم_مكاتبة_المركز %>
+      
+      <%= f.label :تاريخ_المكاتبة %>
+      <%= date_field(:resume, :تاريخ_المكاتبة) %>
+
+
+      <%= f.label :الموضوع %>
+      <%= f.text_field:الموضوع%>
+
+      <%= f.label :جهة_الصادر %>                    
+      <%
+=begin%>
+ <%= select(:resume, :جهة_الصادر, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %> 
+<%
+=end%>
+
+  <%= f.label :الظابط_المختص %>
+      <%= select(:resume, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
+
+      <%= f.label :وسيلة_الأرسال %>
+      <%
+=begin%>
+ <%= select(:resume, :وسيلة_الأرسال, [['التزام'], ['معلومية'], ['مطلوب رد']]) %> 
+<%
+=end%>
+
+
+      <%= f.label :ملاحظات%>
+      <%
+=begin%>
+ <%= select(:resume, :ملاحظات, [['مغلقة'], ['منتهية']]) %> 
+<%
+=end%>
+
+      <%= f.label :الموضوع_الرئيسى %>
+      <%= f.text_field:الموضوع_الرئيسى %>
+
+<% end %>
+<% end %>
+
+
+</div>

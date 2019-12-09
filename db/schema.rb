@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_11_23_114355) do
 
-  create_table "resumes", force: :cascade do |t|
+  create_table "resumes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "attachment"
     t.string "رقم_مكاتبة_المركز"

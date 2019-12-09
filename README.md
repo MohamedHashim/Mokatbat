@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+ * mysql  -u mohamed -p
+
+ * ALTER USER 'mohamed'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin';

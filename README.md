@@ -26,3 +26,9 @@ Things you may want to cover:
  * mysql  -u mohamed -p
 
  * ALTER USER 'mohamed'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin';
+
+ * rails g model outgoing
+
+ * rake db:migrate
+
+ * rails g controller outgoings

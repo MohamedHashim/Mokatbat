@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_23_114355) do
+ActiveRecord::Schema.define(version: 2019_12_10_002727) do
 
   create_table "resumes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -28,4 +28,17 @@ ActiveRecord::Schema.define(version: 2019_11_23_114355) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "outgoings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "attachment"
+    t.string "رقم_المكاتبة"
+    t.string "تاريخ_المكاتبة"
+    t.string "الموضوع"
+    t.string "جهة_الصادر"
+    t.string "الظابط_المختص"
+    t.string "وسيلة_الأرسال"
+    t.string "ملاحظات"
+    t.string "الموضوع_الرئيسى"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 end

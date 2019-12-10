@@ -1,0 +1,48 @@
+<h1>Outgoing#new</h1>
+<p>Find me in app/views/outgoing/new.html.erb</p>
+<% if !@outgoings.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @outgoings.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @outgoings, html: { multipart: true } do |f| %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+
+      <%= f.label :رقم_مكاتبة %>
+      <%= f.text_field :رقم_المكاتبة %>
+      
+      <%= f.label :تاريخ_المكاتبة %>
+      <%= date_field(:outgoing, :تاريخ_المكاتبة) %>
+
+      <%= f.label :الموضوع %>
+      <%= f.text_field:الموضوع%>
+
+      <%= f.label :جهة_الصادر %>                    
+      <%= select(:outgoing, :جهة_الصادر, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %> 
+
+      <%= f.label :الظابط_المختص %>
+      <%= select(:outgoing, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
+
+      <%= f.label :وسيلة_الأرسال %>
+      <%= select(:outgoing, :وسيلة_الأرسال, [['التزام'], ['معلومية'], ['مطلوب رد']]) %> 
+
+      <%= f.label :ملاحظات%>
+      <%= select(:outgoing, :ملاحظات, [['مغلقة'], ['منتهية']]) %> 
+
+      <%= f.label :الموضوع_الرئيسى %>
+      <%= f.text_field:الموضوع_الرئيسى %>
+      
+      <%= f.submit "Save", class: "btn btn-primary" %>
+
+   <% end %>
+
+</div>

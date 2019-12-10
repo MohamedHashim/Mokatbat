@@ -11,7 +11,6 @@
       
    </div>
 <% end %>
-<% if params[:type] == 'incoming'%>
 
    <div class = "well">
    <%= form_for @resume, html: { multipart: true } do |f| %>
@@ -58,55 +57,6 @@
 
       <%= f.submit "Save", class: "btn btn-primary" %>
    <% end %>
-
-
-<% else %>
-<div class = "well">
-   <%= form_for @resume, html: { multipart: true } do |f| %>
-      <%= f.label :attachment %>
-      <%= f.file_field :attachment %>
-
-
-      <%= f.label :رقم_مكاتبة %>
-      <%= f.text_field :رقم_مكاتبة_المركز %>
-      
-      <%= f.label :تاريخ_المكاتبة %>
-      <%= date_field(:resume, :تاريخ_المكاتبة) %>
-
-
-      <%= f.label :الموضوع %>
-      <%= f.text_field:الموضوع%>
-
-      <%= f.label :جهة_الصادر %>                    
-      <%
-=begin%>
- <%= select(:resume, :جهة_الصادر, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %> 
-<%
-=end%>
-
-  <%= f.label :الظابط_المختص %>
-      <%= select(:resume, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
-
-      <%= f.label :وسيلة_الأرسال %>
-      <%
-=begin%>
- <%= select(:resume, :وسيلة_الأرسال, [['التزام'], ['معلومية'], ['مطلوب رد']]) %> 
-<%
-=end%>
-
-
-      <%= f.label :ملاحظات%>
-      <%
-=begin%>
- <%= select(:resume, :ملاحظات, [['مغلقة'], ['منتهية']]) %> 
-<%
-=end%>
-
-      <%= f.label :الموضوع_الرئيسى %>
-      <%= f.text_field:الموضوع_الرئيسى %>
-
-<% end %>
-<% end %>
 
 
 </div>

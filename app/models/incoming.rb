@@ -1,4 +1,4 @@
-class Resume < ActiveRecord::Base
+class Incoming < ActiveRecord::Base
     mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
     validates :name, presence: true # Make sure the owner's name is present.
     validates :رقم_مكاتبة_المركز, presence: true # Make sure the owner's number is present.
@@ -10,4 +10,4 @@ class Resume < ActiveRecord::Base
     validates :الموضوع, presence: true # Make sure the owner's number is present.
     validates :الظابط_المختص, presence: true # Make sure the owner's number is present.
     validates :الموضوع_الرئيسى, presence: true # Make sure the owner's number is present.
- end
+end

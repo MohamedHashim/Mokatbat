@@ -32,3 +32,8 @@ Things you may want to cover:
  * rake db:migrate
 
  * rails g controller outgoings
+
+
+ ** Drop a database table
+
+ * rails generate migration DropResumesTable

@@ -1,6 +1,6 @@
-class CreateResumes < ActiveRecord::Migration[6.0]
+class CreateIncomings < ActiveRecord::Migration[6.0]
   def change
-    create_table :resumes do |t|
+    create_table :incomings do |t|
       t.string :name
       t.string :attachment
       t.string :رقم_مكاتبة_المركز

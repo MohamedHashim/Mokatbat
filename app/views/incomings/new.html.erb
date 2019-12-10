@@ -1,10 +1,10 @@
-<h1>Resumes#new</h1>
-<p>Find me in app/views/resumes/new.html.erb</p>
-<% if !@resume.errors.empty? %>
+<h1>Incomings#new</h1>
+<p>Find me in app/views/incomings/new.html.erb</p>
+<% if !@incoming.errors.empty? %>
    <div class = "alert alert-error">
       
       <ul>
-         <% @resume.errors.full_messages.each do |msg| %>
+         <% @incoming.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
          <% end %>
       </ul>
@@ -13,7 +13,7 @@
 <% end %>
 
    <div class = "well">
-   <%= form_for @resume, html: { multipart: true } do |f| %>
+   <%= form_for @incoming, html: { multipart: true } do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <%= f.label :attachment %>
@@ -28,26 +28,26 @@
 
 
       <%= f.label :تاريخ_المكاتبة %>
-      <%= date_field(:resume, :تاريخ_المكاتبة) %>
+      <%= date_field(:incoming, :تاريخ_المكاتبة) %>
 
 
       <%= f.label :جهة_الوارد %>                    
-      <%= select(:resume, :جهة_الوارد, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %>
+      <%= select(:incoming, :جهة_الوارد, [['اشارة'], ['ردار'], ['سيكرتارية عسكرية']]) %>
 
 
       <%= f.label :طبيعة_المكاتبة %>
-      <%= select(:resume, :طبيعة_المكاتبة, [['التزام'], ['معلومية'], ['مطلوب رد']]) %>
+      <%= select(:incoming, :طبيعة_المكاتبة, [['التزام'], ['معلومية'], ['مطلوب رد']]) %>
 
 
       <%= f.label :حالة_المكاتبة %>
-      <%= select(:resume, :حالة_المكاتبة, [['مغلقة'], ['منتهية']]) %>
+      <%= select(:incoming, :حالة_المكاتبة, [['مغلقة'], ['منتهية']]) %>
 
 
       <%= f.label :الموضوع %>
       <%= f.text_field:الموضوع%>
 
       <%= f.label :الظابط_المختص %>
-      <%= select(:resume, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
+      <%= select(:incoming, :الظابط_المختص, [['رائد / محمود فوزى'], ['نقيب / بهى'], [' رائد/ احمد سمير']]) %>
 
 
       <%= f.label :الموضوع_الرئيسى %>

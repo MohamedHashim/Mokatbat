@@ -37,3 +37,11 @@ Things you may want to cover:
  ** Drop a database table
 
  * rails generate migration DropResumesTable
+
+ gem install rubocop
+
+ rubocop .\app\uploaders\attachment_uploader.rb
+
+ rubocop .\app
+
+ rubocop .\app\uploaders\attachment_uploader.rb --auto-correct

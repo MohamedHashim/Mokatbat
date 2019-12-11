@@ -45,3 +45,24 @@ Things you may want to cover:
  rubocop .\app
 
  rubocop .\app\uploaders\attachment_uploader.rb --auto-correct
+ 
+ 
+ 
+ use behooth_center;
+select * from Outgoings;
+select * from Resumes;
+select * from Incomings;
+
+
+
+ mysql -u root -p EnterPassword: admin
+
+mysql -u root -p
+create user 'mohamed'@'localhost' identified by 'admin';
+grant all privileges on *.* to 'mohamed'@'localhost';
+ mysql  -u mohamed -p
+ ALTER USER 'mohamed'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin';
+
+gem install mysql2 '>=0.3'
+bundle install
+mysql -u root -p EnterPassword: admin
